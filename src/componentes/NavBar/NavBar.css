@@ -1,0 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/shine-of-love');
+
+
+.bg-menu{
+    background-color: #b8bf84e5;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    font-weight: bold!important;
+    color: white ;
+    text-shadow: darkgreen 1px 1px;
+    font-family: 'Shine of Love', sans-serif;
+    font-size: 30px;;
+
+   
+}

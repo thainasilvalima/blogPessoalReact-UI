@@ -1,13 +1,41 @@
-import React from 'react';
-import './Home.css';
+import { Box } from '@mui/material'
+import { Button, Grid, TextField, Typography } from '@material-ui/core'
+
+import './Home.css'
 
 function Home() {
     return (
-        <>
-            <h1>Home</h1>
-            <img src="https://img.freepik.com/vetores-gratis/conjunto-de-contorno-de-borboleta-desenhado-a-mao_23-2149029442.jpg?w=826&t=st=1681311885~exp=1681312485~hmac=96d13c812d3f4c9716fdc7e360dafd405171112a0765959eac658c2cfbb372c0" alt="Imagem Tela Inicial" width="500" height="500" />
-        </>
-    );
+        <Grid container className="bg-home">
+            <Grid item xs={12} sm={12}>
+
+                <Box display="flex" justifyContent="center" alignItems="center" height="80vh">
+
+                    <Box className="card">
+                        <Typography className='card-title' variant="h4" align="center">
+                            Login
+                        </Typography>
+
+                        <form>
+                            <Box marginY={4}>
+                                <TextField className='form-input' id="standard-basic" type="email" label="Email" required />
+                            </Box>
+
+                            <Box marginY={4}>
+                                <TextField className='form-input' id="standard-basic" type="password" label="Senha" required />
+                            </Box>
+
+                            <Button className="form-btn" variant="contained">
+                                Acessar
+                            </Button>
+                        </form>
+
+                    </Box>
+
+                </Box>
+
+            </Grid>
+        </Grid >
+    )
 }
 
-export default Home;
+export default Home

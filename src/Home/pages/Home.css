@@ -1,9 +1,69 @@
 
 
 
-body {
+.bg-home{
+    width: 100vw;
+    min-height: calc(100vh - 64px); /* Função para calcular o tamanho do Home com base no tamanho da tela e do Navbar */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    text-align: center;
+    background-image: url('https://img.freepik.com/fotos-gratis/close-de-uma-pequena-carapaca-de-tartaruga-em-uma-folha_53876-98229.jpg?w=1380&t=st=1681322311~exp=1681322911~hmac=f3093f5ec1ad089408295c09d563dee55770f56eedfda83ce8320a073cc673db ');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-};
+.card{
+    width: 400px;
+    height: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 24px;
+    background: #ffffff3b;
+    font-style: oblique;
+    text-shadow: black 1px 1px ;
+
+
+}
+
+.card-title{
+    font-weight: bold !important;
+    color: #ffffff ;
+
+
+}
+
+form{
+    width: 300px;
+    
+}
+
+label{
+    color: #ffffff!important;
+    font-weight: bold!important;
+}
+
+.form-input{
+    width: 100%;
+    
+}
+
+.form-btn{
+    background-color: #4F5902!important;
+    color: #ffffff!important;
+}
+
+.MuiInput-underline:before{
+    border-bottom: 2px solid #A0A603!important;
+}
+
+.MuiInput-underline:after{
+    border-bottom: 2px solid #A0A603!important;
+}
 
