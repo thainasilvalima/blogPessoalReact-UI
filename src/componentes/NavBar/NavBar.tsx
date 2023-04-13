@@ -1,20 +1,18 @@
-import { AppBar, Toolbar, Typography } from '@material-ui/core'
+import React from 'react';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
-import './NavBar.css'
+
 
 function NavBar() {
     return (
         <>
-            <AppBar position="static" className='bg-menu'>
-                <Toolbar className='container'>
-                    <Typography className='title' variant="h6">
-                        Fly like a Butterfly
+            <AppBar className='nv-menu' position="static">
+                <Toolbar className='container-menu'>
+                    <Typography variant="h6">
+                        ButterFly
                     </Typography>
-                    <Typography className='title' variant="h6">
+                    <Typography variant="h6" >
                         Home
-                    </Typography>
-                    <Typography className='title' variant="h6">
-                       Contato
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -22,4 +20,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default NavBar;

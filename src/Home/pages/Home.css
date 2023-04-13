@@ -25,7 +25,7 @@
     align-items: center;
 
     border-radius: 24px;
-    background: #ffffff3b;
+    background: #cecbcb3b;
     font-style: oblique;
     text-shadow: black 1px 1px ;
 
@@ -66,4 +66,5 @@ label{
 .MuiInput-underline:after{
     border-bottom: 2px solid #A0A603!important;
 }
+
 
