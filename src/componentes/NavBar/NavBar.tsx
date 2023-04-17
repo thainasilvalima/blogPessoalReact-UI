@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import './NavBar.css'
 
 
 
@@ -7,12 +8,15 @@ function NavBar() {
     return (
         <>
             <AppBar className='nv-menu' position="static">
-                <Toolbar className='container-menu'>
-                    <Typography variant="h6">
-                        ButterFly
-                    </Typography>
-                    <Typography variant="h6" >
+                <Toolbar className='container'>
+                    <Typography variant="h6" className='titulos' >
                         Home
+                    </Typography>
+                    <Typography variant="h6"  className='titulos'>
+                        Cadastre-se
+                    </Typography>
+                    <Typography variant="h6"  className='titulos'>
+                        Contato
                     </Typography>
                 </Toolbar>
             </AppBar>

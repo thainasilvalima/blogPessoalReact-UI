@@ -1,0 +1,47 @@
+
+
+.bg-cadastro {
+
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 80vw;
+    min-height: calc(100vh - 64px); /* Função para calcular o tamanho do Home com base no tamanho da tela e do Navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cardForm{
+
+    border-radius: 15px;
+    background: #4f590259;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vh;
+    height: 70vh;
+   
+}
+
+
+
+.btnCancelar{
+   
+    font-weight: bold !important;
+
+}
+
+.textLink{
+    text-decoration: none;
+}
+
+.btnCadastrar{
+
+    font-weight: bold !important;
+    margin-right: 20px !important;
+
+}   

@@ -1,12 +1,21 @@
+@import url('http://fonts.cdnfonts.com/css/kirsty-2');
+
+
 .nv-menu {
 
-    background-color: #4F5902;
+    background-color: #4F5902 !important;
 }
 
 
+.titulos{
+    font-weight: bold!important; 
+    font-family: 'Kirsty', sans-serif !important;
 
-.container-menu {
+
+}
+
+.container{
 
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-between;
 }

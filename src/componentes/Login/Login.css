@@ -1,0 +1,97 @@
+@import url('http://fonts.cdnfonts.com/css/kirsty-2');
+
+
+.bg-home{
+    width: 80vw;
+    min-height: calc(100vh - 64px); /* Função para calcular o tamanho do Home com base no tamanho da tela e do Navbar */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('https://img.freepik.com/fotos-gratis/imagem-macro-hipnotizante-de-uma-pequena-borboleta-satyrium-preta-em-uma-flor-rosa_181624-27555.jpg?w=996&t=st=1681422728~exp=1681423328~hmac=6cc9a0ce6c0f9a9ecbe676dbc2b34d92cf124dbc82c23807971d3cad2a3f3451');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card{
+    width: 400px;
+    height: 45vh;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 24px;
+    background: #4f590275;
+    
+}
+
+.card-title{
+    
+    color: #ffffff;
+    text-shadow: black  1px 1px;
+    font-family: 'Kirsty', sans-serif !important;
+    font-size: 50px !important;
+    
+    
+
+}
+
+
+label{
+    font-style: italic;
+    color: white !important;
+    font-size: 14px !important;
+}
+
+form{
+    width: 300px;
+    height: 500px;
+}
+
+.text1{
+
+    font-family: 'Kirsty', sans-serif !important;
+    color: white !important;
+    font-size: 20px !important;
+}
+
+.btnCadastro{
+
+    font-family: 'Kirsty', sans-serif !important;
+    font-size: 20px !important;
+    text-decoration: none !important;
+  
+
+}
+
+.form-input{
+    width: 100%;
+    color: black;
+    
+}
+
+.form-btn{
+    background-color: #196332!important;
+    color: #ffffff!important;
+    justify-content: center !important;
+    display: flex !important;
+    font-family: 'Kirsty', sans-serif !important;
+    font-size: 20px !important;
+    
+
+
+}
+
+.MuiInput-underline:before{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.644)!important;
+}
+
+.MuiInput-underline:after{
+    border-bottom: 2px solid white!important;
+}
+
