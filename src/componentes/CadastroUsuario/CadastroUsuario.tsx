@@ -1,4 +1,4 @@
-import React, {useState, useEffect, ChangeEvent }from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { cadastroUsuario } from '../../services/Service';
 import { Grid, TextField, Button, Typography } from '@material-ui/core';
@@ -58,6 +58,7 @@ function CadastroUsuario() {
         } else {
             alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
+
     }
 
     return (
@@ -69,27 +70,25 @@ function CadastroUsuario() {
                     <Box className='cardForm'>
                         <form onSubmit={onSubmit}>
                             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'> Cadastrar </Typography>
-                            <TextField  defaultValue={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="nome" label='Nome' variant='outlined' name='name' margin='normal' fullWidth />
-                            <TextField  defaultValue={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label='Usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
-                            <TextField defaultValue={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label='Senha' variant='outlined' name='usuario' margin='normal' type='password' fullWidth />
-                            <TextField defaultValue={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id="confirmarSenha" label='Confirmar Senha' variant='outlined' name='confirmarSenha' type='password' margin='normal' fullWidth />
-                        </form>
+                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="nome" label='Nome' variant='outlined' name='nome' margin='normal' fullWidth />
+                            <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label='Usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
+                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id="confirmarSenha" label='Confirmar Senha' variant='outlined' name='confirmarSenha' type='password' margin='normal' fullWidth />
 
-                        <Box className='btn-cad' >
-                            <Button variant='contained' color='primary' className='btnCadastrar'>
-                                Cadastrar
-                            </Button>
-
-                            <Link to='/login' className='textLink'>
-                                <Button type='submit' variant='contained' color='secondary' className='btnCancelar' >
-                                    Cancelar
+                            <Box className='btn-cad' >
+                                <Button variant='contained' color='primary' className='btnCadastrar' type='submit'>
+                                    Cadastrar
                                 </Button>
-                            </Link>
 
-                        </Box>
+                                <Link to='/login' className='textLink'>
+                                    <Button variant='contained' color='secondary' className='btnCancelar' >
+                                        Cancelar
+                                    </Button>
+                                </Link>
 
+                            </Box>
+                        </form>
                     </Box>
-
                 </Box>
             </Grid>
         </Grid>
