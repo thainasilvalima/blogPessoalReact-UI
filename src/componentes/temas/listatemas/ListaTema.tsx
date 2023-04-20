@@ -1,30 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Postagem from '../../../models/Postagem';
-import { busca } from '../../../services/Service'
-import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import { Box } from '@mui/material';
-import './ListaPostagem.css';
+import React, { useState, useEffect } from 'react';
 import useLocalStorage from 'react-use-localstorage';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Tema from '../../../models/Tema';
+import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { busca } from '../../../services/Service';
+import { Box } from '@mui/material';
+import './ListaTema.css';
 
+function ListaTema() {
 
-function ListaPostagem() {
-
-    const [posts, setPosts] = useState<Postagem[]>([])
+    const [temas, setTemas] = useState<Tema[]>([])
     const [token, setToken] = useLocalStorage('token');
     let navigate = useNavigate();
 
     useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
+        if (token == '') {
+            alert("Você precisa estar logado!")
             navigate("/login")
-
         }
-    }, [token])
+    }, [token]);
 
-    async function getPost() {
-        await busca("/postagens", setPosts, {
+    async function getTema() {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -32,56 +30,51 @@ function ListaPostagem() {
     }
 
     useEffect(() => {
+        getTema()
+    }, [temas.length])
 
-        getPost()
 
-    }, [posts.length])
 
     return (
         <>
             {
-                posts.map(post => (
+                temas.map(tema => (
+
                     <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Postagens
+                                    Tema
                                 </Typography>
                                 <Typography variant="h5" component="h2">
-                                    Título
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    Texto da Postagem
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    Tema
+                                    Minha descrição
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5}>
-
-                                    <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
+                                <Box display="flex" justifyContent="center" mb={1.5} >
+                                    <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                                         <Box mx={1}>
                                             <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                                                atualizar
+                                                Atualizar
                                             </Button>
                                         </Box>
                                     </Link>
-
-                                    <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                                    <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                                         <Box mx={1}>
                                             <Button variant="contained" size='small' color="secondary">
-                                                deletar
+                                                Deletar
                                             </Button>
                                         </Box>
                                     </Link>
                                 </Box>
                             </CardActions>
                         </Card>
-                    </Box>
+                    </Box >
                 ))
             }
-        </>);
+        </>
+    );
 }
 
-export default ListaPostagem;
+
+export default ListaTema;
