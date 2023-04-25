@@ -4,15 +4,17 @@ import { Button, Grid, TextField, Typography, } from '@material-ui/core'
 import { Link, useNavigate } from 'react-router-dom';
 import { api, login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
-import useLocalStorage from 'react-use-localstorage';
 import './Login.css'
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
 
 
 
 function Login() {
 
     let navigate = useNavigate(); // redireciona o usuário para determinada pagina.
-    const [token, setToken] = useLocalStorage('token'); // hooks que vão manipular o nosso local storage para gravaro token.
+    const dispatch = useDispatch(); // permite que um componente react dispare ações para atualizar o estado da aplicação gerenciado pelo redux.
+    const [token, setToken] = useState('');
     const [userLogin, setUserLogin] = useState<UserLogin>( // useState define como uma determinada variavel será inicializada quando o comp for renderizado sempre quando for ter 
         {
             id: 0,
@@ -36,6 +38,7 @@ function Login() {
 
     useEffect(() => {
         if (token != '') {
+            dispatch(addToken(token));
             navigate('/home')
         }
     }, [token])

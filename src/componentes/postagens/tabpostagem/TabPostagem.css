@@ -1,10 +1,12 @@
 .mini-box{
-    background-color: #6472de;
+    background-color: #c7c0eca6 !important;
+    
 }
 
 .tab-post{
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    color: whitesmoke !important;
+    color: rgb(40, 30, 105) !important;
+    font-size: 18px !important;
 
 }

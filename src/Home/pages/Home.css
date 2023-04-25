@@ -4,7 +4,8 @@
 
 
 .caixa{
-    background-color: #EDCEDF !important;
+    background-color: #EDCEDF !important; 
+   
 }
 
 
@@ -18,7 +19,7 @@
 
     font-family: 'Brannboll Smal', sans-serif !important;
     color: #583d99 !important;
-    padding-bottom: 10px;
+
 
 }
 
@@ -41,9 +42,8 @@
     outline-offset: 3px;
 }
 
-
 .postagens{
-    background-color: #EDCEDF !important;
+    background-color: whitesmoke;
 }
 
 

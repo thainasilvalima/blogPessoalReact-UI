@@ -2,26 +2,27 @@
 
 
 
-.cursor{
-   
+.cursor {
+
     text-decoration: none !important;
+
 
 }
 
-.container{ 
+.container {
 
     justify-content: space-evenly !important;
     display: flex;
     background-color: #c7c0eca6 !important;
-    font-family: 'Kaftus', sans-serif !important;
+
 
 }
 
-.nav-titulo{
+.nav-titulo {
     font-family: 'Kirsty', sans-serif !important;
     font-size: 25px !important;
     color: whitesmoke;
     text-decoration: none !important;
+    text-shadow: 1px 1px black !important;
+    
 }
-
-
