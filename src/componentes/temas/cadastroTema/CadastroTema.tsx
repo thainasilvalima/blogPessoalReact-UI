@@ -52,20 +52,37 @@ function CadastroTema() {
         console.log("tema " + JSON.stringify(tema))
 
         if (id !== undefined) {
-            console.log(tema)
-            put(`/tema`, tema, setTema, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Tema atualizado com sucesso');
+
+            try {
+                await put(`/temas`, tema, setTema, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                alert('Tema atualizado com sucesso');
+
+            } catch (error) {
+                console.log(`Error: ${error}`)
+                alert("Erro, por favor verifique a quantidade minima de caracteres")
+            }
+
+
         } else {
-            post(`/tema`, tema, setTema, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Tema cadastrado com sucesso');
+
+            try {
+                await post(`/temas`, tema, setTema, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+
+                alert('Tema cadastrado com sucesso');
+            } catch (error) {
+                console.log(`Error: ${error}`)
+                alert("Erro, por favor verifique a quantidade minima de caracteres")
+            }
+
+
         }
         back()
 
@@ -76,11 +93,11 @@ function CadastroTema() {
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+        <Container maxWidth="sm" className="topo" >
+            <form onSubmit={onSubmit} className='form-tema'>
+                <Typography variant="h4" className='tema-titulo' >Formulario de cadastro do tema</Typography>
+                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} className='form-input' id="descricao" label="descricao"  name="descricao" margin="normal" fullWidth />
+                <Button type="submit"  className='botao-cad-tema' >
                     Finalizar
                 </Button>
             </form>

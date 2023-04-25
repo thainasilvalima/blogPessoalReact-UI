@@ -40,13 +40,13 @@ function ListaTema() {
             {
                 temas.map(tema => (
 
-                    <Box m={2} >
-                        <Card variant="outlined">
-                            <CardContent>
-                                <Typography color="textSecondary" gutterBottom>
+                    <Box m={2} className='container-listTema' >
+                        <Card className='card-tema' >
+                            <CardContent >
+                                <Typography color="textSecondary" gutterBottom className='card-titulo-tema'> 
                                     Tema
                                 </Typography>
-                                <Typography variant="h5" component="h2">
+                                <Typography variant="h6" component="h2" className='card-titulo-tema'>
                                     Minha descrição
                                 </Typography>
                             </CardContent>
@@ -54,14 +54,14 @@ function ListaTema() {
                                 <Box display="flex" justifyContent="center" mb={1.5} >
                                     <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                            <Button  className='botao-lista-tema1'size='small'  >
                                                 Atualizar
                                             </Button>
                                         </Box>
                                     </Link>
                                     <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
+                                            <Button  size='small' className='botao-lista-tema2'>
                                                 Deletar
                                             </Button>
                                         </Box>

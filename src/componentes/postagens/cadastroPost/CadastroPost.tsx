@@ -30,8 +30,8 @@ function CadastroPost() {
         id: 0,
         titulo: '',
         texto: '',
-        data:'',
-       
+        data: '',
+
     })
 
     useEffect(() => {
@@ -49,7 +49,7 @@ function CadastroPost() {
     }, [id])
 
     async function getTemas() {
-        await busca("/tema", setTemas, {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -78,19 +78,33 @@ function CadastroPost() {
         e.preventDefault()
 
         if (id !== undefined) {
-            put(`/postagens`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Postagem atualizada com sucesso');
+
+            try {
+                await put(`/postagens`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                alert('Postagem atualizada com sucesso');
+
+            } catch (error) {
+                alert("Erro ao atualizar, verifique os campos")
+            }
+
         } else {
-            post(`/postagens`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Postagem cadastrada com sucesso');
+
+            try {
+                await post(`/postagens`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                alert('Postagem cadastrada com sucesso');
+
+            } catch (error) {
+                alert("Erro ao cadastrar, verifique os campos")
+            }
+
         }
         back()
 
@@ -101,18 +115,18 @@ function CadastroPost() {
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+        <Container maxWidth="sm" className="topo2">
+            <form onSubmit={onSubmit} className='form-post'>
+                <Typography variant="h4" className='titulo-cad-post' component="h1" align="center" >Formulario de cadastro de Postagem</Typography>
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo"  name="titulo" margin="normal" fullWidth />
+                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto"  margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
                             headers: {
                                 'Authorization': token
                             }
@@ -124,7 +138,7 @@ function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" className='botao-cad-post'>
                         Finalizar
                     </Button>
                 </FormControl>

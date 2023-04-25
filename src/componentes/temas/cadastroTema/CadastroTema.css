@@ -1,3 +1,61 @@
-.topo{
-    margin-top: 20px;
+@import url('https://fonts.cdnfonts.com/css/kaftus');
+
+
+.topo {
+    
+    margin-top:10%;
+    background: rgba( 199, 192, 236, 0.65 ) !important;
+    box-shadow: 0 8px 8px 0 rgba(14, 18, 63, 0.535) !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    display:flex;
+
+
+}
+
+.tema-titulo{
+    text-align: center;
+    font-family: 'Kaftus', sans-serif !important;
+    color:#583d99;
+
+}
+
+.form-tema{
+
+    padding-top: 50px;    
+    width: 500px;
+    height: 500px;
+    padding-left: 30px;
+    text-align: center;
+
+    
+}
+
+label{
+
+    color: black !important;
+    font-style: italic;
+}
+
+.botao-cad-tema{
+    background: #9384de !important;
+    border-radius: 5px !important;
+    cursor: pointer;
+    justify-content: center;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all .14s ease-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    
+}
+.botao-cad-tema:hover {
+    box-shadow: 3px 3px 0 #000 !important;
+    transform: translate(-4px, -4px) !important;
+}
+
+:focus-visible {
+    outline-offset: 3px !important;
 }

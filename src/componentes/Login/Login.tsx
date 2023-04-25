@@ -45,49 +45,51 @@ function Login() {
         e.preventDefault();
 
         try {
-             await login(`/usuarios/logar`, userLogin, setToken)
-             alert('Usuário logado com sucesso!');
+            await login(`/usuarios/logar`, userLogin, setToken)
+            alert('Usuário logado com sucesso!');
 
-            } catch (error) {
+        } catch (error) {
             alert('Dados do usuário inconsistentes. Erro ao logar!');
-             }
         }
+    }
 
     return (
-            <Grid container className="bg-home" >
-                <Grid item xs={12} sm={12}>
+        <Grid container className="bg-home" >
+            <Grid item xs={12} sm={12}>
 
-                    <Box display="flex" justifyContent="center" alignItems="center" height="90vh">
+                <Box display="flex" justifyContent="center" alignItems="center" height="90vh">
 
-                        <Box className="card" >
-                            <Typography className='card-title' variant="h4" align="center" >
-                                Login
-                            </Typography>
+                    <Box className="card" >
+                        <Typography className='card-title' variant="h3" align="center" >
+                            Login
+                        </Typography>
 
-                            <form onSubmit={logar}>
-                                <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' variant='outlined' id="usuario" name='usuario' label="Usuário" margin='normal' fullWidth />
+                        <form onSubmit={logar} className='form-login'>
+                            <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' id="usuario" name='usuario' label="Usuário" margin='normal' fullWidth />
 
-                                <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' variant='outlined' id="senha" name='senha' type="password" label="Senha" margin='normal' fullWidth />
+                            <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' id="senha" name='senha' type="password" label="Senha" margin='normal' fullWidth />
 
-                                <Button className="form-btn" type='submit' variant='contained'>
-                                    Acessar
-                                </Button>
-                            </form>
+                            <Box > <Button className="form-btn" type='submit' >
+                                Acessar
+                            </Button> </Box>
 
-                            <Box display='flex' justifyContent='center' marginBottom={3}>
-                                <Box marginTop={3}>
-                                    <Typography variant='subtitle1' gutterBottom align='center' className='text1'>Não tem uma conta?</Typography>
 
-                                    <Link to='/cadastrousuario' className='btnCadastro'>
-                                        <Typography gutterBottom align='center'> Cadastre-se</Typography> </Link>
-                                </Box>
+                        </form>
+
+                        <Box display='flex' justifyContent='center' marginBottom={3}>
+                            <Box marginTop={3}>
+                                <Typography variant='subtitle1' gutterBottom align='center' className='text1'>Não tem uma conta?</Typography>
+
+                                <Link to='/cadastrousuario' className='textLink'>
+                                    <Typography gutterBottom align='center' className='cadastre-se'> Cadastre-se</Typography> </Link>
                             </Box>
                         </Box>
                     </Box>
+                </Box>
 
 
-                </Grid>
-            </Grid >
-        );
-    }
-    export default Login;
+            </Grid>
+        </Grid >
+    );
+}
+export default Login;

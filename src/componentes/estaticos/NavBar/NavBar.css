@@ -1,21 +1,27 @@
-@import url('http://fonts.cdnfonts.com/css/kirsty-2');
+@import url('https://fonts.cdnfonts.com/css/kirsty');
 
 
-.nv-menu {
 
-    background-color: #4F5902 !important;
-}
-
-
-.titulos{
-    font-weight: bold!important; 
-    font-family: 'Kirsty', sans-serif !important;
-
+.cursor{
+   
+    text-decoration: none !important;
 
 }
 
-.container{
+.container{ 
 
+    justify-content: space-evenly !important;
     display: flex;
-    justify-content: space-between;
+    background-color: #c7c0eca6 !important;
+    font-family: 'Kaftus', sans-serif !important;
+
 }
+
+.nav-titulo{
+    font-family: 'Kirsty', sans-serif !important;
+    font-size: 25px !important;
+    color: whitesmoke;
+    text-decoration: none !important;
+}
+
+

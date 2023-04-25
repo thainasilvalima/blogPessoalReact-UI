@@ -41,19 +41,19 @@ function ListaPostagem() {
         <>
             {
                 posts.map(post => (
-                    <Box m={2} >
-                        <Card variant="outlined">
-                            <CardContent>
-                                <Typography color="textSecondary" gutterBottom>
+                    <Box m={2} className='container-listPost' >
+                        <Card className='card-post' >
+                            <CardContent >
+                                <Typography color="textSecondary" gutterBottom className='card-titulo-post'>
                                     Postagens
                                 </Typography>
-                                <Typography variant="h5" component="h2">
+                                <Typography variant="h5" component="h2" className='card-titulo-post'>
                                     Título
                                 </Typography>
-                                <Typography variant="body2" component="p">
+                                <Typography variant="body2" component="p" className='card-titulo-post'>
                                     Texto da Postagem
                                 </Typography>
-                                <Typography variant="body2" component="p">
+                                <Typography variant="body2" component="p" className='card-titulo-post'>
                                     Tema
                                 </Typography>
                             </CardContent>
@@ -62,7 +62,7 @@ function ListaPostagem() {
 
                                     <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                                         <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                            <Button variant="contained" size='small' className='botao-lista-tema1'>
                                                 atualizar
                                             </Button>
                                         </Box>
@@ -70,7 +70,7 @@ function ListaPostagem() {
 
                                     <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
+                                            <Button variant="contained" size='small' className='botao-lista-tema2'>
                                                 deletar
                                             </Button>
                                         </Box>

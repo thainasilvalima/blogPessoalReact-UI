@@ -1,3 +1,9 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.card-titulo-post,.card-titulo-tema{
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+
+}

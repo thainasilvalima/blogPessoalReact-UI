@@ -1,47 +1,76 @@
+.cardForm {
 
-
-.bg-cadastro {
-
-    background-image: url('');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 80vw;
-    min-height: calc(100vh - 64px); /* Função para calcular o tamanho do Home com base no tamanho da tela e do Navbar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.cardForm{
-
-    border-radius: 15px;
-    background: #4f590259;  
+    background: #c7c0eca6 !important;
+    box-shadow: 0 8px 8px 0 rgba(14, 18, 63, 0.535) !important;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+    border-radius: 20px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80vh;
-    height: 70vh;
-   
-}
-
-
-
-.btnCancelar{
-   
-    font-weight: bold !important;
+    width: 70vh;
+    height: 60vh;
 
 }
 
-.textLink{
+.form-usuario {
+    width: 400px;
+}
+
+.btnCancelar {
+
+
+    background: rgb(213, 92, 76) !important;
+    border-radius: 10px !important;
+    cursor: pointer;
+    justify-content: center;
+    line-height: 1.5;
+    transition: all .14s ease-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+
+}
+
+.btnCancelar:hover {
+    box-shadow: 3px 3px 0 #000 !important;
+    transform: translate(-4px, -4px);
+}
+
+:focus-visible {
+    outline-offset: 1px;
+}
+
+
+.textLink {
     text-decoration: none;
 }
 
-.btnCadastrar{
+.btnCadastrar {
 
-    font-weight: bold !important;
-    margin-right: 20px !important;
+    background: #9a88f1 !important;
+    border-radius: 10px !important;
+    cursor: pointer;
+    justify-content: center;
+    line-height: 1.5;
+    transition: all .14s ease-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
 
-}   
+.btnCadastrar:hover {
+    box-shadow: 3px 3px 0 #000 !important;
+    transform: translate(-4px, -4px);
+}
+
+:focus-visible {
+    outline-offset: 1px;
+}
+
+.btn-cad {
+    margin-top: 20px !important;
+}
+
+.textos1 {
+    text-align: center;
+    font-family: 'Kaftus', sans-serif !important;
+    color: #583d99;
+}

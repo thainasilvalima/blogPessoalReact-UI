@@ -2,62 +2,58 @@
 
 
 .bg-home{
-    width: 80vw;
-    min-height: calc(100vh - 64px); /* Função para calcular o tamanho do Home com base no tamanho da tela e do Navbar */    
+     
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('https://img.freepik.com/fotos-gratis/imagem-macro-hipnotizante-de-uma-pequena-borboleta-satyrium-preta-em-uma-flor-rosa_181624-27555.jpg?w=996&t=st=1681422728~exp=1681423328~hmac=6cc9a0ce6c0f9a9ecbe676dbc2b34d92cf124dbc82c23807971d3cad2a3f3451');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+   
 }
 
 .card{
-    width: 400px;
-    height: 45vh;
-    padding: 15px;
+    width: 50vh;
+    height: 50vh;
+    background: rgba(199, 192, 236, 0.65) !important;
+    box-shadow: 0 8px 8px 0 rgba(14, 18, 63, 0.535) !important;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+    border-radius: 20px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 24px;
-    background: #4f590275;
+    padding-bottom: 50px;
+
     
 }
 
 .card-title{
     
-    color: #ffffff;
-    text-shadow: black  1px 1px;
-    font-family: 'Kirsty', sans-serif !important;
-    font-size: 50px !important;
+    text-align: center;
+    font-family: 'Kaftus', sans-serif !important;
+    color: #583d99;
+    padding-top: 50px;
  }
 
-
-label{
-    font-style: italic;
-    color: white !important;
-    font-size: 14px !important;
-}
-
-form{
+.form-login{
     width: 300px;
     height: 500px;
+   
 }
 
 .text1{
 
     font-family: 'Kirsty', sans-serif !important;
-    color: white !important;
+    color:#583d99 !important;
     font-size: 20px !important;
 }
 
-.btnCadastro{
+.cadastre-se{
 
     font-family: 'Kirsty', sans-serif !important;
     font-size: 20px !important;
     text-decoration: none !important;
+    color: #9a88f1;
+   font-style: italic;
   
 
 }
@@ -69,13 +65,24 @@ form{
 }
 
 .form-btn{
-    background-color: #196332!important;
-    color: #ffffff !important;
-    justify-content: center !important;
-    display: flex !important;
-    font-family: 'Kirsty', sans-serif !important;
-    font-size: 20px !important;
-    
+   
+    background: #9a88f1 !important;
+    border-radius: 10px !important;
+    cursor: pointer;
+    justify-content: center;
+    line-height: 1.5;
+    transition: all .14s ease-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    margin-top: 20px !important;
+}
+
+.form-btn:hover {
+    box-shadow: 3px 3px 0 #000 !important;
+    transform: translate(-4px, -4px);
+}
+
+:focus-visible {
+    outline-offset: 1px;
 }
 
 .text-decoration-none{
