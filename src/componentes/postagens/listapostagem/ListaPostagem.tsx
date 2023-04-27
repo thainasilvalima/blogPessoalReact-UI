@@ -8,6 +8,7 @@ import './ListaPostagem.css';
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function ListaPostagem() {
@@ -16,11 +17,21 @@ function ListaPostagem() {
     let navigate = useNavigate();
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      );
+    );
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+            
             navigate("/login")
 
         }
@@ -51,13 +62,13 @@ function ListaPostagem() {
                                     Postagens
                                 </Typography>
                                 <Typography variant="h5" component="h2" className='card-titulo-post'>
-                                    Título
+                                {post.titulo}
                                 </Typography>
                                 <Typography variant="body2" component="p" className='card-titulo-post'>
-                                    Texto da Postagem
+                                {post.texto}
                                 </Typography>
                                 <Typography variant="body2" component="p" className='card-titulo-post'>
-                                    Tema
+                                {post.tema?.descricao}
                                 </Typography>
                             </CardContent>
                             <CardActions>

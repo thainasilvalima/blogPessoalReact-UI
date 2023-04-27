@@ -6,6 +6,7 @@ import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function CadastroTema() {
@@ -13,15 +14,25 @@ function CadastroTema() {
     const { id } = useParams<{ id: string }>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      );
+    );
     const [tema, setTema] = useState<Tema>({
         id: 0,
-        descricao: ''
+        descricao:''
     })
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+
             navigate("/login")
 
         }
@@ -34,7 +45,7 @@ function CadastroTema() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/tema/${id}`, setTema, {
+        buscaId(`/temas/${id}`, setTema, {
             headers: {
                 'Authorization': token
             }
@@ -52,8 +63,6 @@ function CadastroTema() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        console.log("tema " + JSON.stringify(tema))
-
         if (id !== undefined) {
 
             try {
@@ -62,11 +71,27 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                alert('Tema atualizado com sucesso');
-
+                toast.success('Tema atualizado com sucesso', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             } catch (error) {
-                console.log(`Error: ${error}`)
-                alert("Erro, por favor verifique a quantidade minima de caracteres")
+                toast.error('Erro, por favor verifique a quantidade minima de caracteres', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
 
 
@@ -79,10 +104,27 @@ function CadastroTema() {
                     }
                 })
 
-                alert('Tema cadastrado com sucesso');
+                toast.success('Tema cadastrado com sucesso', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             } catch (error) {
-                console.log(`Error: ${error}`)
-                alert("Erro, por favor verifique a quantidade minima de caracteres")
+                toast.error('Erro, por favor verifique a quantidade minima de caracteres', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
 
 
@@ -99,8 +141,8 @@ function CadastroTema() {
         <Container maxWidth="sm" className="topo" >
             <form onSubmit={onSubmit} className='form-tema'>
                 <Typography variant="h4" className='tema-titulo' >Formulario de cadastro do tema</Typography>
-                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} className='form-input' id="descricao" label="descricao"  name="descricao" margin="normal" fullWidth />
-                <Button type="submit"  className='botao-cad-tema' >
+                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} className='form-input' id="descricao" label="descricao" name="descricao" margin="normal" fullWidth />
+                <Button type="submit" className='botao-cad-tema' >
                     Finalizar
                 </Button>
             </form>

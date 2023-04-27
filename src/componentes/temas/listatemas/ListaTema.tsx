@@ -8,18 +8,29 @@ import { Box } from '@mui/material';
 import './ListaTema.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function ListaTema() {
 
     const [temas, setTemas] = useState<Tema[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      );
+    );
     let navigate = useNavigate();
 
     useEffect(() => {
         if (token == '') {
-            alert("Você precisa estar logado!")
+            toast.error('Você precisa estar logado', {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+            
             navigate("/login")
         }
     }, [token]);
@@ -46,25 +57,25 @@ function ListaTema() {
                     <Box m={2} className='container-listTema' >
                         <Card className='card-tema' >
                             <CardContent >
-                                <Typography color="textSecondary" gutterBottom className='card-titulo-tema'> 
+                                <Typography color="textSecondary" gutterBottom className='card-titulo-tema'>
                                     Tema
                                 </Typography>
                                 <Typography variant="h6" component="h2" className='card-titulo-tema'>
-                                    Minha descrição
+                                {tema.descricao}
                                 </Typography>
                             </CardContent>
                             <CardActions>
                                 <Box display="flex" justifyContent="center" mb={1.5} >
                                     <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button  className='botao-lista-tema1'size='small'  >
+                                            <Button className='botao-lista-tema1' size='small'  >
                                                 Atualizar
                                             </Button>
                                         </Box>
                                     </Link>
                                     <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                                         <Box mx={1}>
-                                            <Button  size='small' className='botao-lista-tema2'>
+                                            <Button size='small' className='botao-lista-tema2'>
                                                 Deletar
                                             </Button>
                                         </Box>

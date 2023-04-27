@@ -4,7 +4,8 @@
 
 
 .caixa{
-    background-color: #EDCEDF !important; 
+    background-color: #EDCEDF !important;
+    max-height: 100vh; 
    
 }
 
@@ -44,6 +45,6 @@
 
 .postagens{
     background-color: whitesmoke;
+    height: 46vh;
+
 }
-
-

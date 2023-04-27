@@ -7,6 +7,7 @@ import UserLogin from '../../models/UserLogin';
 import './Login.css'
 import { useDispatch } from 'react-redux';
 import { addToken } from '../../store/tokens/actions';
+import { toast } from 'react-toastify';
 
 
 
@@ -49,10 +50,27 @@ function Login() {
 
         try {
             await login(`/usuarios/logar`, userLogin, setToken)
-            alert('Usuário logado com sucesso!');
-
+            toast.success('Usuário logado com sucesso!', {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
     }
 
@@ -60,7 +78,7 @@ function Login() {
         <Grid container className="bg-home" >
             <Grid item xs={12} sm={12}>
 
-                <Box display="flex" justifyContent="center" alignItems="center" height="90vh">
+                <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
 
                     <Box className="card" >
                         <Typography className='card-title' variant="h3" align="center" >

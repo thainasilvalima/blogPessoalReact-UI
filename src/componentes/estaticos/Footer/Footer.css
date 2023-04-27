@@ -1,7 +1,12 @@
-.ft {
+p {
 
     font-style: italic;
     font-size: 14px;
-    background-color: #c7c0eca6 !important;
+    padding-top: 10px;
     
-};
+    
+}
+
+.midias{
+    padding-bottom: 10px;
+}

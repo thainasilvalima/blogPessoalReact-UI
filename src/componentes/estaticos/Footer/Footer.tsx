@@ -19,22 +19,26 @@ function Footer() {
     if (token != "") {
 
         footerComponent =
-            <Grid alignItems="center" item xs={12} container direction="row" justifyContent="center" className='ft'>
-                <Box paddingTop={1} justifyContent="center" style={{ height: "90px" }}>
-                    <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "black" }} >© 2023 Copyright: </Typography>
-
-                    <Box display="flex" alignItems="center" justifyContent="center">
-                        <a href="https://www.facebook.com/generationbrasil" target="_blank" rel="noopener noreferrer">
-                            <FacebookIcon style={{ fontSize: 40, color: "#583d99" }} />
-                        </a>
-                        <a href="https://www.instagram.com/generationbrasil/" target="_blank" rel="noopener noreferrer">
-                            <InstagramIcon style={{ fontSize: 40, color: "#583d99" }} />
-                        </a>
-                        <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank" rel="noopener noreferrer">
-                            <LinkedInIcon style={{ fontSize: 40, color: "#583d99" }} />
-                        </a>
+            <Grid container direction="row" justifyContent="center" alignItems="center">
+                <Grid alignItems="center" item xs={12}>
+                    <Box style={{ backgroundColor: "whitesmoke", height: "80px" }}>
+                        <Box display="flex" alignItems="center" justifyContent="center">
+                            <Typography component="p" align="center" gutterBottom style={{ color: "black" }}>Siga-nos nas redes sociais </Typography>
+                        </Box>
+                        <Box display="flex" alignItems="center" justifyContent="center" className='midias'>
+                            <a href="https://www.facebook.com/generationbrasil" target="_blank" rel="noopener noreferrer">
+                                <FacebookIcon style={{ fontSize: 40, color: "black" }} />
+                            </a>
+                            <a href="https://www.instagram.com/generationbrasil/" target="_blank" rel="noopener noreferrer">
+                                <InstagramIcon style={{ fontSize: 40, color: "black" }} />
+                            </a>
+                            <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank" rel="noopener noreferrer">
+                                <LinkedInIcon style={{ fontSize: 40, color: "black" }} />
+                            </a>
+                        </Box>
                     </Box>
-                </Box>
+
+                </Grid>
             </Grid>
 
     }

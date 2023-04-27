@@ -7,6 +7,7 @@ import ModalPostagem from '../../componentes/postagens/modalPostagem/ModalPostag
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 
@@ -19,7 +20,17 @@ function Home() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+            
             navigate("/login")
 
         }
@@ -28,7 +39,7 @@ function Home() {
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
                 <Grid alignItems="center" item xs={6}>
-                    <Box paddingX={20} >
+                    <Box paddingX={20}  >
                         <Typography variant="h2" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'>Seja bem vinde</Typography>
                         <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className='titulo2'>expresse aqui os seus pensamentos e opiniões 💟  </Typography>
                     </Box>
@@ -44,7 +55,7 @@ function Home() {
                 <Grid item xs={6} >
                     <img src="src/assets/img/background3.png" alt="" width="700px" height="500px" />
                 </Grid>
-                <Grid xs={12} className='postagens'>
+                <Grid xs={12} className='postagens' >
                     <TabPostagem />
                 </Grid>
             </Grid>

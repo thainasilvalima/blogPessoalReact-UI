@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { addToken } from '../../../store/tokens/actions';
+import { toast } from 'react-toastify';
 
 
 function NavBar() {
@@ -19,7 +20,16 @@ function NavBar() {
 
     function goLogout() {
         dispatch(addToken(''));
-        alert("Usuário precisa estar logado!")
+       toast.info('Usuário deslogado' , {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+       })
         navigate('/login')
     }
 
@@ -27,7 +37,7 @@ function NavBar() {
 
     if (token != "") {
         navbarComponent = <AppBar className='nv-menu' position="static">
-            <Toolbar className='container'>
+            <Toolbar className='container' variant="dense">
                 <Link to="/home" className='cursor'>
                     <Box  >
                         <Typography variant="h6" className='nav-titulo' >

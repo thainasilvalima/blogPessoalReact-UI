@@ -7,6 +7,7 @@ import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroPost() {
     let navigate = useNavigate();
@@ -14,11 +15,21 @@ function CadastroPost() {
     const [temas, setTemas] = useState<Tema[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      );
+    );
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+
             navigate("/login")
 
         }
@@ -33,7 +44,9 @@ function CadastroPost() {
         id: 0,
         titulo: '',
         texto: '',
-        data: '',
+        tema: null,
+
+
 
     })
 
@@ -88,10 +101,27 @@ function CadastroPost() {
                         'Authorization': token
                     }
                 })
-                alert('Postagem atualizada com sucesso');
-
+                toast.success('Postagem atualizada com sucesso', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             } catch (error) {
-                alert("Erro ao atualizar, verifique os campos")
+                toast.error('Erro ao atualizar, verifique os campos', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
 
         } else {
@@ -102,10 +132,27 @@ function CadastroPost() {
                         'Authorization': token
                     }
                 })
-                alert('Postagem cadastrada com sucesso');
-
+                toast.success('Postagem cadastrada com sucesso', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             } catch (error) {
-                alert("Erro ao cadastrar, verifique os campos")
+                toast.error('Erro ao cadastrar, verifique os campos', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
 
         }
@@ -121,8 +168,8 @@ function CadastroPost() {
         <Container maxWidth="sm" className="topo2">
             <form onSubmit={onSubmit} className='form-post'>
                 <Typography variant="h4" className='titulo-cad-post' component="h1" align="center" >Formulario de cadastro de Postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo"  name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto"  margin="normal" fullWidth />
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" name="titulo" margin="normal" fullWidth />
+                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
