@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { TokenState } from '../../../store/tokens/reducer';
 import { toast } from 'react-toastify';
 
 
@@ -76,7 +76,7 @@ function DeletarTema() {
   return (
     <>
       <Box m={2}>
-        <Card variant="outlined">
+        <Card className='card-deletar'>
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
@@ -90,12 +90,12 @@ function DeletarTema() {
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-                <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+                <Button onClick={sim}  className="btn-delete1" size='large' >
                   Sim
                 </Button>
               </Box>
               <Box mx={2}>
-                <Button onClick={nao} variant="contained" size='large' color="secondary">
+                <Button onClick={nao}  size='large' className='btn-delete2'>
                   Não
                 </Button>
               </Box>

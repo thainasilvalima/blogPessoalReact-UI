@@ -4,3 +4,30 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb{
+  background: #4A507D;
+  border: 1.8px solid #4A507D;
+  border-radius: 100px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover{
+  background: #ECF4FF;
+  }
+  
+  ::-webkit-scrollbar-track{
+  background: #ECF4FF;
+  border-radius: 100px;
+  box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+  margin: 15px 0px;
+  }
+
+  input{
+    color: azure;
+  }
+
+ 

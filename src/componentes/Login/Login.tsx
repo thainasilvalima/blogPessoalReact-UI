@@ -101,7 +101,7 @@ function Login() {
                             <Box marginTop={3}>
                                 <Typography variant='subtitle1' gutterBottom align='center' className='text1'>Não tem uma conta?</Typography>
 
-                                <Link to='/cadastrousuario' className='textLink'>
+                                <Link to='/cadastrousuario'>
                                     <Typography gutterBottom align='center' className='cadastre-se'> Cadastre-se</Typography> </Link>
                             </Box>
                         </Box>

@@ -19,7 +19,8 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
-            senha: ''
+            senha: '',
+            foto: '',
         })
 
     const [userResult, setUserResult] = useState<User>(
@@ -27,7 +28,9 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
-            senha: ''
+            senha: '',
+            foto: '',
+
         })
 
     useEffect(() => {
@@ -50,20 +53,36 @@ function CadastroUsuario() {
         })
 
     }
+
+
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha == user.senha) {
-            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            toast.success('Usuário cadastrado com sucesso', {
-                position: "top-center",
-                autoClose: 4000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            });
+        if (confirmarSenha == user.senha && user.senha.length >= 8) {
+
+            try {
+                await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+                toast.success('Usuário cadastrado com sucesso', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+            } catch {
+                toast.error('Erro a cadastrar o Usuario', {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+            }
         } else {
             toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
                 position: "top-center",
@@ -75,23 +94,55 @@ function CadastroUsuario() {
                 theme: "colored",
                 progress: undefined,
             });
+
+            setUser({ ...user, senha: "" })
+            setConfirmarSenha("")
         }
 
+
     }
+
 
     return (
         <Grid container className="bg-cadastro">
             <Grid item xs={12} sm={12} >
 
-                <Box display="flex" justifyContent="center" alignItems="center" height="90vh" >
+                <Box display="flex" justifyContent="center" alignItems="center" height="100vh" >
 
                     <Box className='cardForm'>
                         <form onSubmit={onSubmit} className='form-usuario' >
                             <Typography variant='h3' gutterBottom component='h3' align='center' className='textos1'> Cadastrar </Typography>
-                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="nome" label='Nome' name='nome' margin='normal' fullWidth />
-                            <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label='Usuario' name='usuario' margin='normal' fullWidth />
-                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label='Senha' name='senha' margin='normal' type='password' fullWidth />
-                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id="confirmarSenha" label='Confirmar Senha' name='confirmarSenha' type='password' margin='normal' fullWidth />
+
+                            <TextField value={user.nome}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id="nome" label='Nome'
+                                name='nome' margin='normal' fullWidth placeholder='Insira seu nome'
+                                />
+
+                            <TextField
+                                value={user.foto}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id='foto' label='Foto'                               name='foto' margin='normal' fullWidth
+                                placeholder='Insira um link de foto'
+                                 />
+
+                            <TextField value={user.usuario}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id="usuario" label='Usuario'
+                                name='usuario' margin='normal' fullWidth placeholder='Insira um email válido'
+                               />
+
+                            <TextField value={user.senha}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id="senha" label='Senha'
+                                name='senha' margin='normal' type='password' fullWidth placeholder='Insira no mínimo 8 caracteres'
+                                 />
+
+                            <TextField value={confirmarSenha}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+                                id="confirmarSenha" label='Confirmar Senha' name='confirmarSenha' type='password'
+                                margin='normal' fullWidth placeholder='Insira novamente a senha'
+                                />
 
                             <Box className='btn-cad' display="flex" justifyContent="center" >
                                 <Button className='btnCadastrar' type='submit'>
@@ -112,6 +163,7 @@ function CadastroUsuario() {
             </Grid>
         </Grid>
     )
-}
 
+
+}
 export default CadastroUsuario;

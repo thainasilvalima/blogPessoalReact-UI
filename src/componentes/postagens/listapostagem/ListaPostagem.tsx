@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service'
-import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
 import { Box } from '@mui/material';
 import './ListaPostagem.css';
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { TokenState } from '../../../store/tokens/reducer';
 import { toast } from 'react-toastify';
 
 
@@ -32,27 +32,28 @@ function ListaPostagem() {
                 progress: undefined,
             });
             
-            navigate("/login")
+            navigate("/login");
 
         }
-    }, [token])
+    }, [token]);
 
     async function getPost() {
         await busca("/postagens", setPosts, {
             headers: {
                 'Authorization': token
-            }
-        })
+            },
+        });
     }
 
     useEffect(() => {
 
         getPost()
 
-    }, [posts.length])
+    }, [posts.length]);
 
     return (
         <>
+        <Grid container direction='row'>
             {
                 posts.map(post => (
                     <Box m={2} className='container-listPost' >
@@ -95,7 +96,10 @@ function ListaPostagem() {
                     </Box>
                 ))
             }
-        </>);
+            </Grid>
+        </>
+        
+        );
 }
 
 export default ListaPostagem;

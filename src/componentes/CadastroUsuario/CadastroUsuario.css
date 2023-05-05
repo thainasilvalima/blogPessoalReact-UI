@@ -1,7 +1,10 @@
+.bg-cadastro{
+    background-image: url('https://i.imgur.com/P7SxuXA.jpg');
+}
+
 .cardForm {
 
     background: #c7c0eca6 !important;
-    box-shadow: 0 8px 8px 0 rgba(14, 18, 63, 0.535) !important;
     backdrop-filter: blur(3px) !important;
     -webkit-backdrop-filter: blur(3px) !important;
     border-radius: 20px !important;
@@ -32,7 +35,7 @@
 }
 
 .btnCancelar:hover {
-    box-shadow: 3px 3px 0 #000 !important;
+    box-shadow: 3px 3px 0 azure !important;
     transform: translate(-4px, -4px);
 }
 
@@ -57,7 +60,7 @@
 }
 
 .btnCadastrar:hover {
-    box-shadow: 3px 3px 0 #000 !important;
+    box-shadow: 3px 3px 0 azure !important;
     transform: translate(-4px, -4px);
 }
 

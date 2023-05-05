@@ -1,23 +1,28 @@
-.topo2 {
-    margin-top:10%;
+
+.bg-cadastro-post{
+    background-image: url('https://i.imgur.com/JIgcI1p.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cardForm-post {
+    margin-top:3%;
     background: rgba( 199, 192, 236, 0.65 ) !important;
-    box-shadow: 0 8px 8px 0 rgba(14, 18, 63, 0.535) !important;
     backdrop-filter: blur( 3px ) !important;
     -webkit-backdrop-filter: blur( 3px ) !important;
-    border-radius: 20px !important;
-}
-
-.form-post {
-
-    padding-top: 50px;
-    width: 450px;
-    height: 450px;
+    border-radius: 10px !important;
+    width: 740px;
+    height: 550px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding-left: 80px;
-
 }
 
-.botao-cad-post{
+.btncad{
 
     background: #9384de !important;
     border-radius: 5px !important;
@@ -28,16 +33,16 @@
     transition: all .14s ease-out;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
-.botao-cad-post:hover {
-    box-shadow: 3px 3px 0 #000 !important;
+.btncad:hover {
+    box-shadow: 1px 1px 0 #000 !important;
     transform: translate(-4px, -4px) !important;
 }
 
 :focus-visible {
-    outline-offset: 3px !important;
+    outline-offset: 2px !important;
 }
 
-.titulo-cad-post{
+.tituloPost{
     text-align: center;
     font-family: 'Kaftus', sans-serif !important;
     color:#583d99;

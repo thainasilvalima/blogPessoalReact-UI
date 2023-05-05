@@ -9,16 +9,16 @@
     background-image: url('src/assets/img/background4.png');
     background-size:cover !important;
     background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  !important;
 }
 
 .card {
     width: 50vh;
     height: 50vh;
     background: rgba(199, 192, 236, 0.65) !important;
-    box-shadow: 8px 8px 8px 8px rgba(14, 18, 63, 0.535) !important;
     backdrop-filter: blur(3px) !important;
     -webkit-backdrop-filter: blur(3px) !important;
-    border-radius: 20px !important;
+    border-radius: 10px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,18 +44,16 @@
 
 .text1 {
 
-    font-family: 'Kirsty', sans-serif !important;
     color: #583d99 !important;
-    font-size: 20px !important;
+    font-size: 15px !important;
 }
 
 .cadastre-se {
 
-    font-family: 'Kirsty', sans-serif !important;
-    font-size: 20px !important;
-    text-decoration: none !important;
+
+    font-size: 15px !important;
     color: #6f56ef;
-    font-style: bold !important;
+
 
 
 }
@@ -85,8 +83,4 @@
 
 :focus-visible {
     outline-offset: 1px;
-}
-
-.text-decoration-none {
-    text-decoration: none !important;
 }

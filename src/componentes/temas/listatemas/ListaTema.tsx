@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Tema from '../../../models/Tema';
-import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
 import { busca } from '../../../services/Service';
 import { Box } from '@mui/material';
 import './ListaTema.css';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { TokenState } from '../../../store/tokens/reducer';
 import { toast } from 'react-toastify';
 
 function ListaTema() {
@@ -50,7 +50,7 @@ function ListaTema() {
 
 
     return (
-        <>
+        <> <Grid container direction='row'> 
             {
                 temas.map(tema => (
 
@@ -86,6 +86,7 @@ function ListaTema() {
                     </Box >
                 ))
             }
+            </Grid>
         </>
     );
 }

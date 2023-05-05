@@ -14,16 +14,15 @@
 
     justify-content: space-evenly !important;
     display: flex;
-    background-color: #c7c0eca6 !important;
-
+    background-color: darkslateblue;
 
 }
 
 .nav-titulo {
-    font-family: 'Kirsty', sans-serif !important;
     font-size: 25px !important;
     color: whitesmoke;
     text-decoration: none !important;
-    text-shadow: 1px 1px black !important;
+    transition: all .14s ease-out;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif  !important;
     
 }

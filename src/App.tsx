@@ -16,6 +16,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Contato from './componentes/Contato/Contato';
+import Perfil from './componentes/perfil/Perfil';
 
 
 function App() {
@@ -52,6 +54,10 @@ function App() {
 
             <Route path="/deletarTema/:id" element={<DeletarTema />} />
 
+            <Route path="/contato" element={<Contato />} />
+
+            <Route path="/perfil" element={<Perfil />} />
+            
           </Routes>
         </div>
         <Footer />
